@@ -4,7 +4,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
-    <script src="script.js"></script>
     <title>Library</title>
 </head>
 <body>
@@ -13,10 +12,37 @@
             <h1>Library</h1>
         </div>
         <div class="allbooks">
-            <button class="add-book">+ Add Book</button>
+            <dialog id="dialog">
+                <form method="dialog" id="book-form">
+                  <p>
+                    <label>
+                        Book Title:
+                        <input type="text" name="title" required/>
+                    </label>
+                    <label>
+                        Author:
+                        <input type="text" name="author" required/>
+                    </label>
+                    <label>
+                        Number of pages:
+                        <input type="number" name="pages" required/>
+                    </label>
+                    <label>
+                        Already Read:
+                        <input type="checkbox" name="read" required/>
+                    </label>
+                </p>
+                  <div>
+                    <input type="submit" id="submit-input" value="Submit"/>
+                    <input type="button" id="cancel-input" value="Cancel">
+                  </div>
+                </form>
+              </dialog>
+              <button id="add-book">+ Add Book</button>
             <div class="books"></div>
         </div>
         <div class="footer"></div>
     </div>
 </body>
+<script src="script.js"></script>
 </html>
