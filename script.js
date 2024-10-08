@@ -6,8 +6,9 @@ const form = document.getElementById("book-form");
 const submitBtn = dialog.querySelector("#submit-input");
 const closeButton = dialog.querySelector("#cancel-input");
 
+const booksContainer = document.querySelector(".books");
+
 function Book(title,author,pages,read) {
-  // the constructor...
   this.title = title,
   this.author = author,
   this.pages = pages,
@@ -44,7 +45,23 @@ function addBookToLibrary() {
   };
 
   myLibrary.push(book);
+  displayBooks(form.title.value);
   console.log(myLibrary)
 }
+
+function displayBooks(bookTitle){
+  const newBook = document.createElement("div");
+  
+  newBook.className = "book";
+  newBook.id = bookTitle;
+  newBook.textContent = `${form.title.value},
+  ${myLibrary[myLibrary.length-1].author},
+  ${myLibrary[myLibrary.length-1].pages},
+  ${myLibrary[myLibrary.length-1].read}`
+
+  booksContainer.appendChild(newBook);
+}
+
+
 
 
