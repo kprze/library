@@ -11,34 +11,34 @@
         <div class="header">
             <h1>Library</h1>
         </div>
-        <div class="allbooks">
-            <dialog id="dialog">
-                <form method="dialog" id="book-form">
-                  <p>
-                    <label>
-                        Book Title:
-                        <input type="text" name="title" required/>
-                    </label>
-                    <label>
-                        Author:
-                        <input type="text" name="author" required/>
-                    </label>
-                    <label>
-                        Number of pages:
-                        <input type="number" name="pages" required/>
-                    </label>
-                    <label>
-                        Already Read:
-                        <input type="checkbox" name="read"/>
-                    </label>
-                </p>
-                  <div>
-                    <input type="submit" id="submit-input" value="Submit"/>
-                    <input type="button" id="cancel-input" value="Cancel">
-                  </div>
-                </form>
-              </dialog>
-              <button id="add-book">+ Add Book</button>
+        <dialog id="dialog">
+            <form method="dialog" id="book-form">
+              <p>
+                <label>
+                    Book Title:
+                    <input type="text" name="title" required/>
+                </label>
+                <label>
+                    Author:
+                    <input type="text" name="author" required/>
+                </label>
+                <label>
+                    Number of pages:
+                    <input type="number" name="pages" required/>
+                </label>
+                <label>
+                    Already Read:
+                    <input type="checkbox" name="read"/>
+                </label>
+            </p>
+              <div>
+                <input type="submit" id="submit-input" value="Submit"/>
+                <input type="button" id="cancel-input" value="Cancel">
+              </div>
+            </form>
+          </dialog>
+          <button id="add-book">+ Add Book</button>
+        <div class="book-list">
             <div class="books"></div>
         </div>
         <div class="footer"></div>
