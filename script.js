@@ -32,6 +32,7 @@ submitBtn.addEventListener("click", (e) => {
 });
 
 closeButton.addEventListener("click", () => {
+  form.reset();
   dialog.close();
 });
 
