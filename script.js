@@ -46,23 +46,26 @@ function addBookToLibrary() {
   };
 
   myLibrary.push(book);
-  displayBooks(form.title.value);
+  createBookElement(book);
   console.log(myLibrary)
 }
 
-function displayBooks(bookTitle){
+function createBookElement(book){
   const newBook = document.createElement("div");
-  
+  const bookTitle = document.createElement("h2");
+  const bookAuthor = document.createElement("p");
+  const bookPages = document.createElement("p");
+
   newBook.className = "book";
-  newBook.id = bookTitle;
-  newBook.textContent = `${form.title.value},
-  ${myLibrary[myLibrary.length-1].author},
-  ${myLibrary[myLibrary.length-1].pages},
-  ${myLibrary[myLibrary.length-1].read}`
-
+  newBook.id = book.title;
   booksContainer.appendChild(newBook);
+
+  bookTitle.textContent = book.title;
+  newBook.appendChild(bookTitle);
+
+  bookAuthor.textContent = book.author;
+  newBook.appendChild(bookAuthor);
+
+  bookPages.textContent = book.pages;
+  newBook.appendChild(bookPages);
 }
-
-
-
-
