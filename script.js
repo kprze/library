@@ -45,8 +45,13 @@ function addBookToLibrary() {
     read: form.read.checked
   };
 
-  myLibrary.push(book);
-  createBookElement(book);
+  if (checkDuplicate(book.title)) {
+    alert("Book already exists in library");
+    return;
+  } else {
+    myLibrary.push(book);
+    createBookElement(book); 
+  }
   console.log(myLibrary)
 }
 
@@ -68,4 +73,8 @@ function createBookElement(book){
 
   bookPages.textContent = book.pages;
   newBook.appendChild(bookPages);
+}
+
+function checkDuplicate(title) {
+  return myLibrary.some(book => book.title === title);
 }
