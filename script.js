@@ -50,6 +50,7 @@ function addBookToLibrary() {
     return;
   } else {
     myLibrary.push(book);
+    console.log(myLibrary);
     createBookElement(book); 
   }
 }
@@ -102,8 +103,21 @@ function addBookOptions(bookCover) {
   readBtn.textContent = "Read";
   deleteBtn.textContent = "Delete";
 
+  readBtn.addEventListener("click", () => {
+    const book = myLibrary.find(book => book.title === bookCover.nextSibling.firstChild.textContent);
+    book.read = !book.read;
+    console.log(myLibrary)
+  });
+
+  deleteBtn.addEventListener("click", () => {
+    const book = myLibrary.find(book => book.title === bookCover.nextSibling.firstChild.textContent);
+    const bookIndex = myLibrary.indexOf(book);
+    myLibrary.splice(bookIndex, 1);
+    console.log(myLibrary)
+    bookCover.parentNode.remove();
+  });
+
   bookCover.appendChild(options);
   options.appendChild(readBtn);
   options.appendChild(deleteBtn);
-}
-
+};
