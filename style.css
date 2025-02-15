@@ -13,3 +13,11 @@
     flex-grow: 1;
     padding-left: 20px;
 }
+
+.book-cover button {
+    display: none;
+}
+
+.book-cover:hover button {
+    display: block;
+}
