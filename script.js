@@ -56,6 +56,8 @@ function addBookToLibrary() {
 
 function createBookElement(book){
   const newBook = document.createElement("div");
+  const bookInfo = document.createElement("div");
+  const bookCover = document.createElement("div");
   const bookTitle = document.createElement("h2");
   const bookAuthor = document.createElement("p");
   const bookPages = document.createElement("p");
@@ -64,14 +66,20 @@ function createBookElement(book){
   newBook.id = book.title + book.author;
   booksContainer.appendChild(newBook);
 
+  bookCover.className = "book-cover";
+  newBook.appendChild(bookCover);
+
+  bookInfo.className = "book-info";
+  newBook.appendChild(bookInfo);
+
   bookTitle.textContent = book.title;
-  newBook.appendChild(bookTitle);
+  bookInfo.appendChild(bookTitle);
 
   bookAuthor.textContent = book.author;
-  newBook.appendChild(bookAuthor);
+  bookInfo.appendChild(bookAuthor);
 
   bookPages.textContent = book.pages;
-  newBook.appendChild(bookPages);
+  bookInfo.appendChild(bookPages);
 }
 
 function checkDuplicate(title, author) {
