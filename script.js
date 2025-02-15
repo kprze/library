@@ -73,15 +73,33 @@ function createBookElement(book){
   newBook.appendChild(bookInfo);
 
   bookTitle.textContent = book.title;
-  bookInfo.appendChild(bookTitle);
-
   bookAuthor.textContent = book.author;
-  bookInfo.appendChild(bookAuthor);
-
   bookPages.textContent = book.pages;
+
+  bookInfo.appendChild(bookTitle);
+  bookInfo.appendChild(bookAuthor);
   bookInfo.appendChild(bookPages);
+
+  addBookOptions(bookCover);
 }
 
 function checkDuplicate(title, author) {
   return myLibrary.some(book => book.title === title && book.author === author);
+}
+
+function addBookOptions(bookCover) {
+  const options = document.createElement("div");
+  const readBtn = document.createElement("button");
+  const deleteBtn = document.createElement("button");
+
+  options.className = "book-options";
+  readBtn.className = "read-btn";
+  deleteBtn.className = "delete-btn";
+
+  readBtn.textContent = "Read";
+  deleteBtn.textContent = "Delete";
+
+  bookCover.appendChild(options);
+  options.appendChild(readBtn);
+  options.appendChild(deleteBtn);
 }
