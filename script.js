@@ -54,6 +54,7 @@ function addBookToLibrary() {
   }
 }
 
+// Create book element and append to books container
 function createBookElement(book){
   const newBook = document.createElement("div");
   const bookInfo = document.createElement("div");
@@ -83,10 +84,12 @@ function createBookElement(book){
   addBookOptions(bookCover);
 }
 
+// Check if book already exists in library
 function checkDuplicate(title, author) {
   return myLibrary.some(book => book.title === title && book.author === author);
 }
 
+// Add options to book cover
 function addBookOptions(bookCover) {
   const options = document.createElement("div");
   const readBtn = document.createElement("button");
@@ -103,3 +106,4 @@ function addBookOptions(bookCover) {
   options.appendChild(readBtn);
   options.appendChild(deleteBtn);
 }
+
