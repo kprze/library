@@ -61,7 +61,7 @@ function createBookElement(book){
   const bookPages = document.createElement("p");
 
   newBook.className = "book";
-  newBook.id = book.title;
+  newBook.id = book.title + book.author;
   booksContainer.appendChild(newBook);
 
   bookTitle.textContent = book.title;
