@@ -81,6 +81,7 @@ function createBookElement(book){
   bookInfo.appendChild(bookTitle);
   bookInfo.appendChild(bookAuthor);
   bookInfo.appendChild(bookPages);
+  isBookRead(book,bookCover);
 
   addBookOptions(bookCover);
 }
@@ -106,6 +107,7 @@ function addBookOptions(bookCover) {
   readBtn.addEventListener("click", () => {
     const book = myLibrary.find(book => book.title === bookCover.nextSibling.firstChild.textContent);
     book.read = !book.read;
+    isBookRead(book,bookCover);
     console.log(myLibrary)
   });
 
@@ -121,3 +123,11 @@ function addBookOptions(bookCover) {
   options.appendChild(readBtn);
   options.appendChild(deleteBtn);
 };
+
+function isBookRead(book,bookCover) {
+  if(book.read){
+    bookCover.style.backgroundColor = "green";
+  } else {
+    bookCover.style.backgroundColor = "red";
+  }
+}
