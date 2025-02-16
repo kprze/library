@@ -7,6 +7,9 @@
     width: 100px;
     height: 150px;
     background-color: #9b4b00;
+    border-style: ridge;
+    border-color: #000000;
+    border-width: 8px;
 }
 
 .book-info {
