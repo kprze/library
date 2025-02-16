@@ -126,8 +126,8 @@ function addBookOptions(bookCover) {
 
 function isBookRead(book,bookCover) {
   if(book.read){
-    bookCover.style.backgroundColor = "green";
+    bookCover.style.borderColor = "green";
   } else {
-    bookCover.style.backgroundColor = "red";
+    bookCover.style.borderColor = "red";
   }
 }
